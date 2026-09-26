@@ -1,6 +1,6 @@
 {
-  "name": "zenithmax-v13",
-  "version": "16.4.0",
+  "name": "zenithmax-v20",
+  "version": "20.0.0",
   "private": true,
   "scripts": {
     "start": "node server/server.js",

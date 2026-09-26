@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const crypto = require('crypto');
 const AdmZip = require('adm-zip');
+const shortsRemote = require('./shorts_remote');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,19 +17,26 @@ const GAME_DIR = path.join(DATA_DIR, 'games');
 const DB = path.join(DATA_DIR, 'db.json');
 const SECRET = process.env.JWT_SECRET || 'CHANGE_THIS_IN_PRODUCTION';
 const CATALOG = JSON.parse(fs.readFileSync(path.join(__dirname, 'starter_catalog.json'), 'utf8'));
+const SHORTS = JSON.parse(fs.readFileSync(path.join(__dirname, 'shorts_catalog.json'), 'utf8'));
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 fs.mkdirSync(GAME_DIR, { recursive: true });
 
 const REMOTE_CACHE = path.join(DATA_DIR, 'remote_video_cache.json');
+const RESUMABLE_DIR = path.join(DATA_DIR, 'resumable');
+const RESUMABLE_CHUNK = 4 * 1024 * 1024;
+fs.mkdirSync(RESUMABLE_DIR, { recursive: true });
 const ALLOWED_LICENSES = ['CC0','Public domain','CC BY','CC BY-SA'];
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 function isAllowedLicense(license){
   const s=String(license||'').replace(/<[^>]+>/g,'').trim().toLowerCase();
   return ALLOWED_LICENSES.some(x=>s.includes(x.toLowerCase()));
 }
-async function commonsSearch(term, limit=16){
-  const qs=new URLSearchParams({action:'query',generator:'search',gsrsearch:`${term} video`,gsrnamespace:'6',gsrlimit:String(limit),prop:'imageinfo',iiprop:'url|mime|extmetadata',format:'json',origin:'*'});
-  const r=await fetch(`https://commons.wikimedia.org/w/api.php?${qs.toString()}`,{headers:{'User-Agent':'ZenithMax remote starter media'}});
+async function commonsSearch(term, limit=50){
+  const qs=new URLSearchParams({
+    action:'query',generator:'search',gsrsearch:String(term),gsrnamespace:'6',gsrlimit:String(Math.min(limit,50)),
+    prop:'imageinfo',iiprop:'url|mime|extmetadata',format:'json',origin:'*'
+  });
+  const r=await fetch(`https://commons.wikimedia.org/w/api.php?${qs.toString()}`,{headers:{'User-Agent':'ZenithMax/17 remote starter media'}});
   if(!r.ok) throw new Error(`Commons API ${r.status}`);
   const j=await r.json();
   return Object.values(j.query?.pages||{}).map(page=>{
@@ -42,31 +50,59 @@ async function commonsSearch(term, limit=16){
     };
   }).filter(x=>/^video\/(mp4|webm|ogg)$/i.test(x.mime)&&x.url&&isAllowedLicense(x.license));
 }
+function tokenScore(a,b){
+  const stop=new Set(['video','videos','the','and','for','with','of','a','an','on','in']);
+  const A=new Set(String(a).toLowerCase().split(/[^a-z0-9]+/).filter(x=>x&&!stop.has(x)));
+  const B=String(b).toLowerCase();
+  let score=0; for(const t of A) if(B.includes(t)) score+=t.length>=6?3:1; return score;
+}
 async function resolveRemoteCatalog(){
   let cache={}; try{if(fs.existsSync(REMOTE_CACHE))cache=JSON.parse(fs.readFileSync(REMOTE_CACHE,'utf8'));}catch{}
-  const used=new Set(); const library=[];
+  const used=new Set();
+  // Reuse already verified cache entries first.
   for(const item of CATALOG.videos){
-    let hit=cache[item.slug];
-    if(!hit||!hit.url||used.has(hit.url)||!isAllowedLicense(hit.license)){
-      try{
-        const results=await commonsSearch(item.searchTopic,18);
-        hit=results.find(x=>!used.has(x.url))||null;
-      }catch(err){
-        console.warn('Remote media lookup failed for '+item.searchTopic+': '+err.message);
-        hit=null;
-      }
-      await sleep(60);
-    }
-    if(hit){
+    const hit=cache[item.slug];
+    if(hit?.url && isAllowedLicense(hit.license)){
       Object.assign(item,{remoteUrl:hit.url,remoteTitle:hit.title,license:hit.license,sourcePage:hit.sourcePage,sourceCreator:hit.sourceCreator,mediaSource:'Wikimedia Commons'});
-      used.add(hit.url); library.push(hit); cache[item.slug]=hit;
-    }else{
-      Object.assign(item,{remoteUrl:'',remoteTitle:'Remote source unavailable',mediaSource:'unresolved'});
+      used.add(hit.url);
+    }
+  }
+  const cats=[...new Set(CATALOG.videos.map(v=>v.category))];
+  for(const cat of cats){
+    const pending=CATALOG.videos.filter(v=>v.category===cat && !v.remoteUrl);
+    if(!pending.length) continue;
+    let pool=[];
+    try{ pool=await commonsSearch(`${cat.toLowerCase()} video`,50); }catch(err){ console.warn(`Remote pool lookup failed for ${cat}: ${err.message}`); }
+    // Prefer files whose titles overlap the requested topic; then fill any gaps from the category pool.
+    const available=pool.filter(x=>!used.has(x.url));
+    const chosen=new Set();
+    for(const item of pending){
+      const ranked=[...available].filter(x=>!chosen.has(x.url)).sort((a,b)=>tokenScore(item.searchTopic,a.title)-tokenScore(item.searchTopic,b.title));
+      const hit=ranked.find(x=>tokenScore(item.searchTopic,x.title)>0) || ranked[0];
+      if(hit){
+        Object.assign(item,{remoteUrl:hit.url,remoteTitle:hit.title,license:hit.license,sourcePage:hit.sourcePage,sourceCreator:hit.sourceCreator,mediaSource:'Wikimedia Commons'});
+        used.add(hit.url); chosen.add(hit.url); cache[item.slug]=hit;
+      }
+    }
+  }
+  // A final small number of topic searches handles category terms that Commons does not index well.
+  const unresolved=CATALOG.videos.filter(v=>!v.remoteUrl);
+  for(let i=0;i<unresolved.length;i+=6){
+    const batch=unresolved.slice(i,i+6);
+    const results=await Promise.all(batch.map(async item=>{
+      try{return [item, await commonsSearch(`${item.searchTopic} video`,20)]}catch(err){console.warn(`Topic lookup failed for ${item.searchTopic}: ${err.message}`);return [item,[]]}
+    }));
+    for(const [item,rs] of results){
+      const hit=rs.find(x=>!used.has(x.url));
+      if(hit){
+        Object.assign(item,{remoteUrl:hit.url,remoteTitle:hit.title,license:hit.license,sourcePage:hit.sourcePage,sourceCreator:hit.sourceCreator,mediaSource:'Wikimedia Commons'});
+        used.add(hit.url); cache[item.slug]=hit;
+      } else Object.assign(item,{remoteUrl:'',remoteTitle:'Remote source unavailable',mediaSource:'unresolved'});
     }
   }
   try{fs.mkdirSync(DATA_DIR,{recursive:true});fs.writeFileSync(REMOTE_CACHE,JSON.stringify(cache,null,2));}catch{}
-  CATALOG.remote_video_library=library;
-  return {unique:used.size,unresolved:CATALOG.videos.filter(v=>!v.remoteUrl).length};
+  CATALOG.remote_video_library=Object.values(cache).filter(x=>x?.url);
+  return {unique:[...used].length,unresolved:CATALOG.videos.filter(v=>!v.remoteUrl).length};
 }
 
 const COLLECTIONS = ['users','videos','comments','follows','likes','stories','messages','notifications','bookmarks','reports','history','playlists','subscriptions','creatorSubscriptions','tips','adCampaigns','earnings','music','games'];
@@ -116,6 +152,24 @@ function seed(d){
     });
     changed=true;
   });
+  SHORTS.shorts.forEach((x,i)=>{
+    const existing=d.videos.find(v=>v.id===x.id);
+    const c=SHORTS.shorts[i];
+    const creator=CATALOG.creators[x.creatorIndex%CATALOG.creators.length];
+    const remote=`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(x.sourceFile)}`;
+    if(existing){
+      const next={url:remote,sourcePage:x.sourcePage,sourceCreator:x.sourceCreator,license:x.license,audio:true,isShort:true,starter:true,shortCategory:x.category};
+      let diff=false; for(const [k,val] of Object.entries(next)){ if(existing[k]!==val){ existing[k]=val; diff=true; } }
+      if(diff) changed=true;
+      return;
+    }
+    d.videos.push({
+      id:x.id,userId:creator.id,title:x.title,description:x.description,category:x.category,tags:x.tags,
+      url:remote,remoteTitle:x.title,remoteUrl:remote,audio:true,mediaSource:'Wikimedia Commons',license:x.license,sourcePage:x.sourcePage,sourceCreator:x.sourceCreator,likes:45+(i*71)%1900,
+      views:900+(i*1831)%76000,createdAt:new Date(Date.now()-i*930000).toISOString(),starter:true,isShort:true,shortCategory:x.category,duration:x.duration,status:'published'
+    });
+    changed=true;
+  });
   return changed;
 }
 function load(){
@@ -142,9 +196,9 @@ function notify(d,userId,type,text,link='',actorId=''){
 }
 function pub(d,v,req){
   const u=d.users.find(x=>x.id===v.userId);
-  return {...v,creator:u?.name||'ZenithMax Creator',creatorId:v.userId,verified:!!u?.verified,
+  return {...v,streamUrl:v.isShort?`/api/short-video/${encodeURIComponent(v.id)}`:(v.starter?`/api/starter-video/${encodeURIComponent(v.id)}`:v.url),creator:u?.name||'ZenithMax Creator',creatorId:v.userId,verified:!!u?.verified,avatar:u?.avatar||'',
     liked:!!req.user&&d.likes.some(x=>x.videoId===v.id&&x.userId===req.user.id),
-    saved:!!req.user&&d.bookmarks.some(x=>x.videoId===v.id&&x.userId===req.user.id),
+    saved:!!req.user&&d.bookmarks.some(x=>x.userId===req.user.id&&x.videoId===v.id),
     following:!!req.user&&d.follows.some(x=>x.userId===req.user.id&&x.targetId===v.userId),
     commentCount:d.comments.filter(c=>c.videoId===v.id).length};
 }
@@ -183,6 +237,7 @@ const mediaUpload=multer({storage,limits:{fileSize:100*1024*1024},fileFilter:(re
 const mediaType=m=>m.startsWith('video/')?'video':m.startsWith('audio/')?'audio':m.startsWith('image/')?'image':'file';
 const musicUpload=multer({storage,limits:{fileSize:150*1024*1024},fileFilter:(req,f,cb)=>cb(null,/^(audio\/(mpeg|mp4|wav|ogg|webm|aac|flac)|video\/mp4)$/.test(f.mimetype)||/\.(mp3|m4a|wav|ogg|webm|aac|flac)$/i.test(f.originalname))});
 const gameUpload=multer({storage,limits:{fileSize:200*1024*1024},fileFilter:(req,f,cb)=>cb(null,/zip|compressed/i.test(f.mimetype)||/\.zip$/i.test(f.originalname))});
+const profileUpload=multer({storage,limits:{fileSize:5*1024*1024},fileFilter:(req,f,cb)=>cb(null,/^image\/(jpeg|png|webp|gif)$/i.test(f.mimetype))});
 function safeGameEntry(name){
   const n=String(name||'').replaceAll('\\','/');
   if(!n || n.startsWith('/') || /^[A-Za-z]:/.test(n)) return false;
@@ -220,7 +275,30 @@ app.use('/uploads',express.static(UPLOAD_DIR));
 app.use('/game-assets',express.static(GAME_DIR,{fallthrough:false}));
 app.use(express.static(path.join(ROOT,'client')));
 
-app.get('/api/health',(req,res)=>{const d=load();const sv=d.videos.filter(v=>v.starter&&v.url);res.json({ok:true,version:'16.3.0',videos:d.videos.length,starterVideos:d.videos.filter(v=>v.starter).length,remoteStarterVideos:sv.length,uniqueStarterUrls:new Set(sv.map(v=>v.url)).size,music:d.music.length,games:d.games.length,categories:[...new Set(sv.map(v=>v.category))].sort()});});
+app.get('/api/health',(req,res)=>{const d=load();const sv=d.videos.filter(v=>v.starter&&v.url);const rs=shortsRemote.stats();res.json({ok:true,version:'20.0.0',shortsCatalogCapacity:shortsRemote.SHORTS_CAPACITY,remoteUniqueShorts:rs.total,videos:d.videos.length,starterVideos:d.videos.filter(v=>v.starter&&!v.isShort).length,remoteStarterVideos:sv.filter(v=>!v.isShort).length,uniqueStarterUrls:new Set(sv.filter(v=>!v.isShort).map(v=>v.url)).size,shorts:d.videos.filter(v=>v.isShort).length,uniqueShortUrls:new Set(d.videos.filter(v=>v.isShort).map(v=>v.url)).size,music:d.music.length,games:d.games.length,categories:[...new Set(sv.filter(v=>!v.isShort).map(v=>v.category))].sort()});});
+app.get('/api/starter-video/:id',async(req,res)=>{
+  try{
+    const d=load(),v=d.videos.find(x=>x.id===req.params.id&&x.starter); if(!v)return res.sendStatus(404);
+    const catalogItem=CATALOG.videos.find(x=>'starter-'+x.slug===v.id);
+    async function pickSource(){
+      if(catalogItem?.remoteUrl){v.url=catalogItem.remoteUrl;v.license=catalogItem.license||'';v.sourcePage=catalogItem.sourcePage||'';v.sourceCreator=catalogItem.sourceCreator||'';save(d);return true;}
+      if(!catalogItem?.searchTopic)return false;
+      const rs=await commonsSearch(`${catalogItem.searchTopic} video`,20); const hit=rs[0];
+      if(!hit)return false;
+      v.url=hit.url;v.license=hit.license;v.sourcePage=hit.sourcePage;v.sourceCreator=hit.sourceCreator;v.audio=true;save(d);Object.assign(catalogItem,{remoteUrl:hit.url,license:hit.license,sourcePage:hit.sourcePage,sourceCreator:hit.sourceCreator});return true;
+    }
+    if(!v.url && !(await pickSource()))return res.status(404).json({error:'Starter video source is temporarily unavailable. Please try again.'});
+    const headers={'User-Agent':'ZenithMax/17 video proxy'}; if(req.headers.range)headers.Range=req.headers.range;
+    let upstream=await fetch(v.url,{headers});
+    if(!upstream.ok && upstream.status!==206 && await pickSource()) upstream=await fetch(v.url,{headers});
+    if(!upstream.ok && upstream.status!==206) return res.status(upstream.status).json({error:'Remote video source returned '+upstream.status});
+    res.status(upstream.status);
+    const ct=upstream.headers.get('content-type'); if(ct)res.setHeader('Content-Type',ct);
+    for(const h of ['content-length','content-range','accept-ranges','etag','last-modified']){const value=upstream.headers.get(h);if(value)res.setHeader(h,value)}
+    if(upstream.body){require('stream').Readable.fromWeb(upstream.body).pipe(res);} else res.end();
+  }catch(e){res.status(502).json({error:'Video source could not be reached right now'});}
+});
+
 app.post('/api/auth/register',async(req,res)=>{
   const name=clean(req.body.name,60),email=clean(req.body.email,160).toLowerCase(),password=String(req.body.password||'');
   if(!name||!email||password.length<6)return res.status(400).json({error:'Name, email and a 6+ character password are required'});
@@ -228,12 +306,16 @@ app.post('/api/auth/register',async(req,res)=>{
   const humanUsers=d.users.filter(u=>!u.starter);
   const u={id:uid(),name,email,password:await bcrypt.hash(password,10),bio:'New ZenithMax creator',followers:0,following:0,role:humanUsers.length===0?'admin':'user',createdAt:now(),verified:false,notificationsEnabled:true};
   d.users.push(u); save(d);
-  res.json({token:jwt.sign({id:u.id,name:u.name},SECRET,{expiresIn:'7d'}),user:safeUser(u)});
+  res.json({token:jwt.sign({id:u.id,name:u.name},SECRET,{expiresIn:'30d'}),user:safeUser(u)});
 });
 app.post('/api/auth/login',async(req,res)=>{
   const d=load(),u=d.users.find(x=>x.email===clean(req.body.email,160).toLowerCase());
   if(!u||!(await bcrypt.compare(req.body.password||'',u.password)))return res.status(401).json({error:'Invalid email or password'});
-  res.json({token:jwt.sign({id:u.id,name:u.name},SECRET,{expiresIn:'7d'}),user:safeUser(u)});
+  res.json({token:jwt.sign({id:u.id,name:u.name},SECRET,{expiresIn:'30d'}),user:safeUser(u)});
+});
+app.post('/api/auth/refresh',auth,(req,res)=>{
+  const d=load(),u=d.users.find(x=>x.id===req.user.id); if(!u)return res.sendStatus(404);
+  res.json({token:jwt.sign({id:u.id,name:u.name},SECRET,{expiresIn:'30d'}),user:safeUser(u)});
 });
 app.get('/api/me',auth,(req,res)=>res.json({user:safeUser(load().users.find(x=>x.id===req.user.id))}));
 app.patch('/api/me',auth,(req,res)=>{
@@ -241,7 +323,86 @@ app.patch('/api/me',auth,(req,res)=>{
   if(req.body.name)u.name=clean(req.body.name,60); if(req.body.bio!==undefined)u.bio=clean(req.body.bio,300);
   save(d); res.json({user:safeUser(u)});
 });
+app.post('/api/me/avatar',auth,profileUpload.single('avatar'),(req,res)=>{
+  if(!req.file)return res.status(400).json({error:'Choose a JPG, PNG, WEBP or GIF image'});
+  const d=load(),u=d.users.find(x=>x.id===req.user.id); if(!u)return res.sendStatus(404);
+  if(u.avatar && u.avatar.startsWith('/uploads/')) fs.rmSync(path.join(UPLOAD_DIR,path.basename(u.avatar)),{force:true});
+  u.avatar='/uploads/'+req.file.filename; save(d); res.json({user:safeUser(u)});
+});
 
+app.get('/api/shorts',optional,async(req,res)=>{
+  try{
+    const d=load();
+    const page=Math.max(1,Number(req.query.page||1));
+    const limit=Math.min(24,Math.max(1,Number(req.query.limit||12)));
+    const category=clean(req.query.category,40).toUpperCase()||'ALL';
+    const seeded=d.videos.filter(v=>v.isShort && (category==='ALL'||v.category===category)).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+    const localUrls=new Set(seeded.map(v=>v.url).filter(Boolean));
+    const remote=await shortsRemote.getPage({page,limit,category});
+    const mappedRemote=remote.items.filter(x=>!localUrls.has(x.remoteUrl||x.url)).map(x=>({
+      id:x.id,title:x.title,description:x.description,category:x.category,tags:x.tags,duration:x.duration,
+      url:x.remoteUrl,remoteUrl:x.remoteUrl,remoteTitle:x.title,audio:true,mediaSource:x.mediaSource,
+      license:x.license,sourcePage:x.sourcePage,sourceCreator:x.sourceCreator,createdAt:x.createdAt,
+      views:0,likes:0,creator:'ZenithMax Remote Creator',creatorId:d.users.find(u=>u.id==='creator-zenith')?.id||d.users[0]?.id,
+      verified:false,avatar:'',isShort:true,starter:true,shortCategory:x.category,streamUrl:`/api/short-video-remote?key=${encodeURIComponent(x.remoteKey||Buffer.from(x.remoteUrl).toString('base64url'))}`
+    }));
+    let items;
+    if(page===1){
+      const seedLimit=Math.min(seeded.length,limit);
+      items=[...seeded.slice(0,seedLimit).map(v=>pub(d,v,req)),...mappedRemote.slice(0,Math.max(0,limit-seedLimit))];
+    } else items=mappedRemote;
+    const categories=[...new Set([...d.videos.filter(v=>v.isShort).map(v=>v.category),...shortsRemote.TOPIC_SEEDS.map(x=>x[0])])].sort();
+    const remoteStats=shortsRemote.stats();
+    res.json({videos:items,page,limit,hasMore:remote.hasMore||page*limit<shortsRemote.SHORTS_CAPACITY,categories,catalogCapacity:shortsRemote.SHORTS_CAPACITY,discoveredRemoteShorts:remoteStats.total,remoteCategories:remoteStats.categories});
+  }catch(e){res.status(503).json({error:'Shorts discovery is temporarily unavailable. Please try again.'});}
+});
+
+app.get('/api/shorts/catalog-stats',auth,(req,res)=>{
+  const d=load(),u=d.users.find(x=>x.id===req.user.id);
+  if(u?.role!=='admin')return res.status(403).json({error:'Admin access required'});
+  res.json(shortsRemote.stats());
+});
+
+app.post('/api/shorts/admin/grow',auth,async(req,res)=>{
+  try{
+    const d=load(),u=d.users.find(x=>x.id===req.user.id);
+    if(u?.role!=='admin')return res.status(403).json({error:'Admin access required'});
+    const count=Math.min(500,Math.max(1,Number(req.body.count||100)));
+    const category=clean(req.body.category,40).toUpperCase()||'ALL';
+    const result=await shortsRemote.grow({count,category,maxRequests:160});
+    res.json({ok:true,result});
+  }catch(e){res.status(502).json({error:'Could not grow the Shorts catalog right now'});}
+});
+
+app.get('/api/short-video-remote',async(req,res)=>{
+  try{
+    const remote=shortsRemote.decodeRemoteKey(req.query.key||'');
+    if(!shortsRemote.isAllowedRemoteUrl(remote))return res.status(400).json({error:'Unsupported remote video source'});
+    const headers={'User-Agent':'ZenithMax/20 Shorts media proxy'};
+    if(req.headers.range)headers.Range=req.headers.range;
+    let upstream=await fetch(remote,{headers,redirect:'follow',signal:AbortSignal.timeout(20000)});
+    if(!upstream.ok && upstream.status!==206)return res.status(upstream.status).json({error:'Remote Short source returned '+upstream.status});
+    res.status(upstream.status);
+    const ct=upstream.headers.get('content-type');if(ct)res.setHeader('Content-Type',ct);
+    for(const h of ['content-length','content-range','accept-ranges','etag','last-modified']){const value=upstream.headers.get(h);if(value)res.setHeader(h,value)}
+    if(upstream.body){require('stream').Readable.fromWeb(upstream.body).pipe(res);}else res.end();
+  }catch(e){res.status(502).json({error:'Short video source could not be reached right now'});}
+});
+app.get('/api/short-video/:id',async(req,res)=>{
+  try{
+    const d=load(),v=d.videos.find(x=>x.id===req.params.id&&x.isShort);
+    if(!v)return res.sendStatus(404);
+    const headers={'User-Agent':'ZenithMax/20 Shorts media proxy'};
+    if(req.headers.range)headers.Range=req.headers.range;
+    const remote=v.url;
+    let upstream=await fetch(remote,{headers,redirect:'follow',signal:AbortSignal.timeout(20000)});
+    if(!upstream.ok && upstream.status!==206)return res.status(upstream.status).json({error:'Remote Short source returned '+upstream.status});
+    res.status(upstream.status);
+    const ct=upstream.headers.get('content-type');if(ct)res.setHeader('Content-Type',ct);
+    for(const h of ['content-length','content-range','accept-ranges','etag','last-modified']){const value=upstream.headers.get(h);if(value)res.setHeader(h,value)}
+    if(upstream.body){require('stream').Readable.fromWeb(upstream.body).pipe(res);}else res.end();
+  }catch(e){res.status(502).json({error:'Short video source could not be reached right now'});}
+});
 app.get('/api/videos',optional,(req,res)=>{
   const d=load(),q=clean(req.query.q,120).toLowerCase(),cat=clean(req.query.category,50),sort=req.query.sort||'latest',page=Math.max(1,Number(req.query.page||1)),limit=Math.min(40,Math.max(1,Number(req.query.limit||18)));
   let vs=d.videos.filter(v=>v.status!=='removed'&&(!cat||cat==='ALL'||v.category===cat)&&(!q||v.title.toLowerCase().includes(q)||(v.description||'').toLowerCase().includes(q)||(v.tags||[]).join(' ').toLowerCase().includes(q)));
@@ -275,6 +436,41 @@ app.get('/api/creators',optional,(req,res)=>{
 app.get('/api/users/:id',optional,(req,res)=>{
   const d=load(),u=d.users.find(x=>x.id===req.params.id);if(!u)return res.sendStatus(404);
   res.json({user:safeUser(u),videos:d.videos.filter(v=>v.userId===u.id&&v.status!=='removed').map(v=>pub(d,v,req)),following:!!req.user&&d.follows.some(f=>f.userId===req.user.id&&f.targetId===u.id)});
+});
+
+function resumablePath(id){return path.join(RESUMABLE_DIR,id)}
+function readResume(id){const p=resumablePath(id)+'.json';if(!fs.existsSync(p))return null;return JSON.parse(fs.readFileSync(p,'utf8'))}
+function writeResume(s){s.updatedAt=now();fs.writeFileSync(resumablePath(s.id)+'.json',JSON.stringify(s,null,2))}
+function resumeLimit(type){return type==='video'?500*1024*1024:type==='music'?250*1024*1024:200*1024*1024}
+app.post('/api/resumable/start',auth,(req,res)=>{
+  const type=String(req.body.type||''); if(!['video','music','game'].includes(type))return res.status(400).json({error:'Unsupported upload type'});
+  const name=clean(req.body.name,180),size=Number(req.body.size||0),mime=clean(req.body.mime,120),meta=req.body.meta||{};
+  if(!name||!Number.isFinite(size)||size<1||size>resumeLimit(type))return res.status(400).json({error:`File is missing or larger than the ${Math.round(resumeLimit(type)/1024/1024)} MB limit`});
+  const id=uid(); const s={id,userId:req.user.id,type,name,size,mime,meta,chunkSize:RESUMABLE_CHUNK,totalChunks:Math.ceil(size/RESUMABLE_CHUNK),nextChunk:0,receivedBytes:0,tempPath:resumablePath(id)+'.part',createdAt:now(),updatedAt:now()};
+  fs.writeFileSync(s.tempPath,''); writeResume(s); res.json({uploadId:id,chunkSize:s.chunkSize,totalChunks:s.totalChunks,nextChunk:0});
+});
+app.get('/api/resumable/:id/status',auth,(req,res)=>{const s=readResume(req.params.id);if(!s||s.userId!==req.user.id)return res.sendStatus(404);res.json({uploadId:s.id,chunkSize:s.chunkSize,totalChunks:s.totalChunks,nextChunk:s.nextChunk,receivedBytes:s.receivedBytes,size:s.size,type:s.type,name:s.name})});
+app.put('/api/resumable/:id/chunks/:chunk',auth,express.raw({type:'application/octet-stream',limit:'5mb'}),(req,res)=>{
+  const s=readResume(req.params.id); if(!s||s.userId!==req.user.id)return res.sendStatus(404); const n=Number(req.params.chunk); if(!Number.isInteger(n)||n<0||n>=s.totalChunks)return res.status(400).json({error:'Invalid chunk'});
+  if(n<s.nextChunk)return res.json({ok:true,nextChunk:s.nextChunk,receivedBytes:s.receivedBytes});
+  if(n!==s.nextChunk)return res.status(409).json({error:'Chunk out of order',nextChunk:s.nextChunk});
+  const buf=Buffer.isBuffer(req.body)?req.body:Buffer.from([]); const expected=Math.min(s.chunkSize,s.size-n*s.chunkSize); if(buf.length!==expected)return res.status(400).json({error:`Expected ${expected} bytes for chunk ${n}, received ${buf.length}`});
+  fs.appendFileSync(s.tempPath,buf); s.receivedBytes+=buf.length; s.nextChunk++; writeResume(s); res.json({ok:true,nextChunk:s.nextChunk,receivedBytes:s.receivedBytes});
+});
+app.post('/api/resumable/:id/complete',auth,(req,res)=>{
+  const s=readResume(req.params.id); if(!s||s.userId!==req.user.id)return res.sendStatus(404); if(s.receivedBytes!==s.size||s.nextChunk!==s.totalChunks)return res.status(409).json({error:'Upload is incomplete',nextChunk:s.nextChunk,receivedBytes:s.receivedBytes});
+  try{
+    const ext=path.extname(s.name).toLowerCase()||({video:'.mp4',music:'.mp3',game:'.zip'}[s.type]); const finalName=uid()+ext; const finalPath=path.join(UPLOAD_DIR,finalName); fs.renameSync(s.tempPath,finalPath); let out;
+    const d=load();
+    if(s.type==='video'){
+      const m=s.meta||{}; out={id:uid(),userId:req.user.id,title:clean(m.title,120)||path.parse(s.name).name.slice(0,120),description:clean(m.description,2000),category:clean(m.category,40).toUpperCase()||'GENERAL',tags:clean(m.tags,240).split(',').map(x=>x.trim()).filter(Boolean).slice(0,8),url:'/uploads/'+finalName,likes:0,views:0,createdAt:now(),status:'published'}; d.videos.push(out);
+    } else if(s.type==='music'){
+      const m=s.meta||{}; out={id:uid(),userId:req.user.id,title:clean(m.title,120)||path.parse(s.name).name.slice(0,120),artist:clean(m.artist,80)||req.user.name,album:clean(m.album,120),genre:clean(m.genre,60)||'GENERAL',description:clean(m.description,1000),url:'/uploads/'+finalName,mime:s.mime,fileName:s.name.slice(0,160),likes:0,plays:0,createdAt:now(),status:'published'}; d.music.push(out);
+    } else {
+      const gameId=uid(); const info=extractGameZip(finalPath,gameId); fs.rmSync(finalPath,{force:true}); const m=s.meta||{}; out={id:gameId,userId:req.user.id,title:clean(m.title,120)||path.parse(s.name).name.slice(0,120),description:clean(m.description,1200),genre:clean(m.genre,60)||'ARCADE',version:clean(m.version,30)||'1.0.0',url:'/game-assets/'+gameId+'/index.html',playUrl:'/api/games/'+gameId+'/play',files:info.files,bytes:info.total,plays:0,createdAt:now(),status:'published'}; d.games.push(out);
+    }
+    save(d); fs.rmSync(resumablePath(s.id)+'.json',{force:true}); fs.rmSync(s.tempPath,{force:true}); res.json({ok:true,type:s.type,video:s.type==='video'?out:undefined,music:s.type==='music'?out:undefined,game:s.type==='game'?out:undefined});
+  }catch(e){return res.status(400).json({error:e.message||'Could not finalize upload'});}
 });
 
 app.get('/api/music',(req,res)=>{
@@ -434,4 +630,4 @@ app.post('/api/monetization/ads/impression',optional,(req,res)=>{
 app.get('/api/monetization/eligibility',auth,(req,res)=>{const d=load(),u=d.users.find(x=>x.id===req.user.id);res.json({followers:u?.followers||0,verified:!!u?.verified,eligible:(u?.followers||0)>=100,requirements:['Build a real audience','Publish original or licensed content','Follow applicable platform/payment rules','Complete adult-assisted business/payment setup when required'],mode:'demo'});});
 
 app.use((req,res)=>res.sendFile(path.join(ROOT,'client/index.html')));
-(async()=>{const media=await resolveRemoteCatalog();console.log(`Remote starter media: ${media.unique} unique, ${media.unresolved} unresolved`);app.listen(PORT,'0.0.0.0',()=>console.log(`ZenithMax V16.2 running on http://localhost:${PORT}`));})().catch(err=>{console.error('ZenithMax startup failed:',err);process.exit(1)});
+(async()=>{const media=await resolveRemoteCatalog();shortsRemote.markSeen(load().videos.filter(v=>v.isShort&&v.starter).map(v=>({...v,remoteUrl:v.url}))); console.log(`Remote starter media: ${media.unique} unique, ${media.unresolved} unresolved`);console.log(`Remote Shorts catalog: ${shortsRemote.stats().total} unique entries indexed`);app.listen(PORT,'0.0.0.0',()=>console.log(`ZenithMax V20 running on http://localhost:${PORT}`));})().catch(err=>{console.error('ZenithMax startup failed:',err);process.exit(1)});
