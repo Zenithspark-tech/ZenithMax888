@@ -36,7 +36,7 @@ async function commonsSearch(term, limit=50){
     action:'query',generator:'search',gsrsearch:String(term),gsrnamespace:'6',gsrlimit:String(Math.min(limit,50)),
     prop:'imageinfo',iiprop:'url|mime|extmetadata',format:'json',origin:'*'
   });
-  const r=await fetch(`https://commons.wikimedia.org/w/api.php?${qs.toString()}`,{headers:{'User-Agent':'ZenithMax/17 remote starter media'}});
+  const r=await fetch(`https://commons.wikimedia.org/w/api.php?${qs.toString()}`,{headers:{'User-Agent':'ZenithMax/20 remote starter media'},signal:AbortSignal.timeout(8000)});
   if(!r.ok) throw new Error(`Commons API ${r.status}`);
   const j=await r.json();
   return Object.values(j.query?.pages||{}).map(page=>{
@@ -630,4 +630,18 @@ app.post('/api/monetization/ads/impression',optional,(req,res)=>{
 app.get('/api/monetization/eligibility',auth,(req,res)=>{const d=load(),u=d.users.find(x=>x.id===req.user.id);res.json({followers:u?.followers||0,verified:!!u?.verified,eligible:(u?.followers||0)>=100,requirements:['Build a real audience','Publish original or licensed content','Follow applicable platform/payment rules','Complete adult-assisted business/payment setup when required'],mode:'demo'});});
 
 app.use((req,res)=>res.sendFile(path.join(ROOT,'client/index.html')));
-(async()=>{const media=await resolveRemoteCatalog();shortsRemote.markSeen(load().videos.filter(v=>v.isShort&&v.starter).map(v=>({...v,remoteUrl:v.url}))); console.log(`Remote starter media: ${media.unique} unique, ${media.unresolved} unresolved`);console.log(`Remote Shorts catalog: ${shortsRemote.stats().total} unique entries indexed`);app.listen(PORT,'0.0.0.0',()=>console.log(`ZenithMax V20 running on http://localhost:${PORT}`));})().catch(err=>{console.error('ZenithMax startup failed:',err);process.exit(1)});
+
+// Start listening immediately so Render health checks are not blocked by remote media APIs.
+app.listen(PORT,'0.0.0.0',()=>console.log(`ZenithMax V20 running on port ${PORT}`));
+
+// Remote catalog hydration is best-effort and happens after the service is live.
+(async()=>{
+  try {
+    const media=await resolveRemoteCatalog();
+    shortsRemote.markSeen(load().videos.filter(v=>v.isShort&&v.starter).map(v=>({...v,remoteUrl:v.url})));
+    console.log(`Remote starter media: ${media.unique} unique, ${media.unresolved} unresolved`);
+    console.log(`Remote Shorts catalog: ${shortsRemote.stats().total} unique entries indexed`);
+  } catch (err) {
+    console.warn('Remote catalog hydration skipped:', err?.message || err);
+  }
+})();

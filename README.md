@@ -31,3 +31,7 @@ For an actual 567,000-entry library, keep growing the catalog in batches. The ex
 ## Render free
 
 The web service remains configured for Render's Free plan. Runtime catalog files and user uploads still use the service filesystem; the GitHub workflow provides an optional way to keep the Shorts catalog in the repository so a new Render instance can rebuild from committed catalog shards. User-uploaded media should still move to persistent object storage before production scale.
+
+
+## V20.1 deployment fix
+The server now starts listening immediately; remote media catalog hydration runs in the background with an 8-second API timeout. This prevents Render health checks from being blocked by remote media lookups.
