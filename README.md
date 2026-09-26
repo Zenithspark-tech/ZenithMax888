@@ -55,3 +55,13 @@ The Shorts library now contains 123 starter entries. The first curated entries h
 - Search now falls back to live Wikimedia Commons media search when local results are sparse, returning real remote videos related to the query and related terms.
 - Remote search results are deduplicated, cached, playable through a Range-aware ZenithMax proxy, and retain license/source metadata.
 - Only Commons files with CC0/public-domain/CC BY/CC BY-SA-style labels are accepted by the remote media filter; reusers still need to verify each file's license and satisfy any attribution conditions.
+
+
+## V21 Communication
+- Phone-number discovery for ZenithMax contacts.
+- Direct and group text chat.
+- Voice notes recorded in the browser with MediaRecorder.
+- Image/video/audio attachments.
+- One-to-one and group internet voice/video calls using WebRTC + REST polling signaling.
+- The call system is browser-to-browser internet calling; it is not a cellular/PSTN phone service.
+- Production-grade calling at scale will eventually need TURN servers, durable realtime signaling, rate limits and moderation.
