@@ -1,0 +1,3300 @@
+{
+  "creators": [
+    {
+      "id": "starter-creator-1",
+      "name": "ZenithMax Creator 1",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-2",
+      "name": "ZenithMax Creator 2",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-3",
+      "name": "ZenithMax Creator 3",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-4",
+      "name": "ZenithMax Creator 4",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-5",
+      "name": "ZenithMax Creator 5",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-6",
+      "name": "ZenithMax Creator 6",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-7",
+      "name": "ZenithMax Creator 7",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-8",
+      "name": "ZenithMax Creator 8",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-9",
+      "name": "ZenithMax Creator 9",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-10",
+      "name": "ZenithMax Creator 10",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-11",
+      "name": "ZenithMax Creator 11",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    },
+    {
+      "id": "starter-creator-12",
+      "name": "ZenithMax Creator 12",
+      "bio": "Starter creator for the ZenithMax remote video library."
+    }
+  ],
+  "videos": [
+    {
+      "slug": "city-walk-1",
+      "title": "City Walk",
+      "description": "Remote starter video for the DISCOVER category: city walk.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "city",
+        "walk"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "city walk",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "street-life-2",
+      "title": "Street Life",
+      "description": "Remote starter video for the DISCOVER category: street life.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "street",
+        "life"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "street life",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "night-city-3",
+      "title": "Night City",
+      "description": "Remote starter video for the DISCOVER category: night city.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "night",
+        "city"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "night city",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "sunrise-landscape-4",
+      "title": "Sunrise Landscape",
+      "description": "Remote starter video for the DISCOVER category: sunrise landscape.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "sunrise",
+        "landscape"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "sunrise landscape",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "ocean-waves-5",
+      "title": "Ocean Waves",
+      "description": "Remote starter video for the DISCOVER category: ocean waves.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "ocean",
+        "waves"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "ocean waves",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "forest-trail-6",
+      "title": "Forest Trail",
+      "description": "Remote starter video for the DISCOVER category: forest trail.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "forest",
+        "trail"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "forest trail",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "waterfall-7",
+      "title": "Waterfall",
+      "description": "Remote starter video for the DISCOVER category: waterfall.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "waterfall"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "waterfall",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "public-square-8",
+      "title": "Public Square",
+      "description": "Remote starter video for the DISCOVER category: public square.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "public",
+        "square"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "public square",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "architecture-9",
+      "title": "Architecture",
+      "description": "Remote starter video for the DISCOVER category: architecture.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "architecture"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "architecture",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "marketplace-10",
+      "title": "Marketplace",
+      "description": "Remote starter video for the DISCOVER category: marketplace.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "marketplace"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "marketplace",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "river-scenery-11",
+      "title": "River Scenery",
+      "description": "Remote starter video for the DISCOVER category: river scenery.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "river",
+        "scenery"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "river scenery",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "village-life-12",
+      "title": "Village Life",
+      "description": "Remote starter video for the DISCOVER category: village life.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "village",
+        "life"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "village life",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "urban-transit-13",
+      "title": "Urban Transit",
+      "description": "Remote starter video for the DISCOVER category: urban transit.",
+      "category": "DISCOVER",
+      "tags": [
+        "discover",
+        "urban",
+        "transit"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "urban transit",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "football-training-14",
+      "title": "Football Training",
+      "description": "Remote starter video for the SPORTS category: football training.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "football",
+        "training"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "football training",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "football-match-15",
+      "title": "Football Match",
+      "description": "Remote starter video for the SPORTS category: football match.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "football",
+        "match"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "football match",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "basketball-16",
+      "title": "Basketball",
+      "description": "Remote starter video for the SPORTS category: basketball.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "basketball"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "basketball",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "athletics-running-17",
+      "title": "Athletics Running",
+      "description": "Remote starter video for the SPORTS category: athletics running.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "athletics",
+        "running"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "athletics running",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "cycling-18",
+      "title": "Cycling",
+      "description": "Remote starter video for the SPORTS category: cycling.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "cycling"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "cycling",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "tennis-match-19",
+      "title": "Tennis Match",
+      "description": "Remote starter video for the SPORTS category: tennis match.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "tennis",
+        "match"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "tennis match",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "swimming-20",
+      "title": "Swimming",
+      "description": "Remote starter video for the SPORTS category: swimming.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "swimming"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "swimming",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "volleyball-21",
+      "title": "Volleyball",
+      "description": "Remote starter video for the SPORTS category: volleyball.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "volleyball"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "volleyball",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "baseball-22",
+      "title": "Baseball",
+      "description": "Remote starter video for the SPORTS category: baseball.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "baseball"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "baseball",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "skateboarding-23",
+      "title": "Skateboarding",
+      "description": "Remote starter video for the SPORTS category: skateboarding.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "skateboarding"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "skateboarding",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "surfing-24",
+      "title": "Surfing",
+      "description": "Remote starter video for the SPORTS category: surfing.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "surfing"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "surfing",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "gymnastics-25",
+      "title": "Gymnastics",
+      "description": "Remote starter video for the SPORTS category: gymnastics.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "gymnastics"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "gymnastics",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "martial-arts-demonstration-26",
+      "title": "Martial Arts Demonstration",
+      "description": "Remote starter video for the SPORTS category: martial arts demonstration.",
+      "category": "SPORTS",
+      "tags": [
+        "sports",
+        "martial",
+        "arts",
+        "demonstration"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "martial arts demonstration",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "animated-short-27",
+      "title": "Animated Short",
+      "description": "Remote starter video for the ANIMATION category: animated short.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "animated",
+        "short"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "animated short",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "stop-motion-animation-28",
+      "title": "Stop Motion Animation",
+      "description": "Remote starter video for the ANIMATION category: stop motion animation.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "stop",
+        "motion"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "stop motion animation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "2d-animation-29",
+      "title": "2D Animation",
+      "description": "Remote starter video for the ANIMATION category: 2d animation.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "d"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "2d animation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "3d-animation-30",
+      "title": "3D Animation",
+      "description": "Remote starter video for the ANIMATION category: 3d animation.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "d"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "3d animation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "clay-animation-31",
+      "title": "Clay Animation",
+      "description": "Remote starter video for the ANIMATION category: clay animation.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "clay"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "clay animation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "paper-animation-32",
+      "title": "Paper Animation",
+      "description": "Remote starter video for the ANIMATION category: paper animation.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "paper"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "paper animation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "animated-character-33",
+      "title": "Animated Character",
+      "description": "Remote starter video for the ANIMATION category: animated character.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "animated",
+        "character"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "animated character",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "motion-graphics-34",
+      "title": "Motion Graphics",
+      "description": "Remote starter video for the ANIMATION category: motion graphics.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "motion",
+        "graphics"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "motion graphics",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "cartoon-short-35",
+      "title": "Cartoon Short",
+      "description": "Remote starter video for the ANIMATION category: cartoon short.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "cartoon",
+        "short"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "cartoon short",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "experimental-animation-36",
+      "title": "Experimental Animation",
+      "description": "Remote starter video for the ANIMATION category: experimental animation.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "experimental"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "experimental animation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "puppet-animation-37",
+      "title": "Puppet Animation",
+      "description": "Remote starter video for the ANIMATION category: puppet animation.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "puppet"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "puppet animation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "animated-story-38",
+      "title": "Animated Story",
+      "description": "Remote starter video for the ANIMATION category: animated story.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "animated",
+        "story"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "animated story",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "abstract-animation-39",
+      "title": "Abstract Animation",
+      "description": "Remote starter video for the ANIMATION category: abstract animation.",
+      "category": "ANIMATION",
+      "tags": [
+        "animation",
+        "abstract"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "abstract animation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "how-to-draw-tutorial-40",
+      "title": "How To Draw Tutorial",
+      "description": "Remote starter video for the LEARN category: how to draw tutorial.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "how",
+        "to",
+        "draw",
+        "tutorial"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "how to draw tutorial",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "how-to-build-tutorial-41",
+      "title": "How To Build Tutorial",
+      "description": "Remote starter video for the LEARN category: how to build tutorial.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "how",
+        "to",
+        "build",
+        "tutorial"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "how to build tutorial",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "language-lesson-42",
+      "title": "Language Lesson",
+      "description": "Remote starter video for the LEARN category: language lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "language",
+        "lesson"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "language lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "coding-lesson-43",
+      "title": "Coding Lesson",
+      "description": "Remote starter video for the LEARN category: coding lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "coding",
+        "lesson"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "coding lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "music-lesson-44",
+      "title": "Music Lesson",
+      "description": "Remote starter video for the LEARN category: music lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "music",
+        "lesson"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "music lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "craft-tutorial-45",
+      "title": "Craft Tutorial",
+      "description": "Remote starter video for the LEARN category: craft tutorial.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "craft",
+        "tutorial"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "craft tutorial",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "photography-lesson-46",
+      "title": "Photography Lesson",
+      "description": "Remote starter video for the LEARN category: photography lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "photography",
+        "lesson"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "photography lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "public-speaking-lesson-47",
+      "title": "Public Speaking Lesson",
+      "description": "Remote starter video for the LEARN category: public speaking lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "public",
+        "speaking",
+        "lesson"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "public speaking lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "writing-lesson-48",
+      "title": "Writing Lesson",
+      "description": "Remote starter video for the LEARN category: writing lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "writing",
+        "lesson"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "writing lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "math-lesson-49",
+      "title": "Math Lesson",
+      "description": "Remote starter video for the LEARN category: math lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "math",
+        "lesson"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "math lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "history-lesson-50",
+      "title": "History Lesson",
+      "description": "Remote starter video for the LEARN category: history lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "history",
+        "lesson"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "history lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "geography-lesson-51",
+      "title": "Geography Lesson",
+      "description": "Remote starter video for the LEARN category: geography lesson.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "geography",
+        "lesson"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "geography lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "study-skills-52",
+      "title": "Study Skills",
+      "description": "Remote starter video for the LEARN category: study skills.",
+      "category": "LEARN",
+      "tags": [
+        "learn",
+        "study",
+        "skills"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "study skills",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "video-game-demonstration-53",
+      "title": "Video Game Demonstration",
+      "description": "Remote starter video for the GAMING category: video game demonstration.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "video",
+        "game",
+        "demonstration"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "video game demonstration",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "game-development-54",
+      "title": "Game Development",
+      "description": "Remote starter video for the GAMING category: game development.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "game",
+        "development"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "game development",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "arcade-game-55",
+      "title": "Arcade Game",
+      "description": "Remote starter video for the GAMING category: arcade game.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "arcade",
+        "game"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "arcade game",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "retro-game-56",
+      "title": "Retro Game",
+      "description": "Remote starter video for the GAMING category: retro game.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "retro",
+        "game"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "retro game",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "strategy-game-57",
+      "title": "Strategy Game",
+      "description": "Remote starter video for the GAMING category: strategy game.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "strategy",
+        "game"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "strategy game",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "racing-game-58",
+      "title": "Racing Game",
+      "description": "Remote starter video for the GAMING category: racing game.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "racing",
+        "game"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "racing game",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "platform-game-59",
+      "title": "Platform Game",
+      "description": "Remote starter video for the GAMING category: platform game.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "platform",
+        "game"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "platform game",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "puzzle-game-60",
+      "title": "Puzzle Game",
+      "description": "Remote starter video for the GAMING category: puzzle game.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "puzzle",
+        "game"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "puzzle game",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "simulation-game-61",
+      "title": "Simulation Game",
+      "description": "Remote starter video for the GAMING category: simulation game.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "simulation",
+        "game"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "simulation game",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "game-controller-62",
+      "title": "Game Controller",
+      "description": "Remote starter video for the GAMING category: game controller.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "game",
+        "controller"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "game controller",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "esports-practice-63",
+      "title": "Esports Practice",
+      "description": "Remote starter video for the GAMING category: esports practice.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "esports",
+        "practice"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "esports practice",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "virtual-game-world-64",
+      "title": "Virtual Game World",
+      "description": "Remote starter video for the GAMING category: virtual game world.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "virtual",
+        "game",
+        "world"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "virtual game world",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "indie-game-65",
+      "title": "Indie Game",
+      "description": "Remote starter video for the GAMING category: indie game.",
+      "category": "GAMING",
+      "tags": [
+        "gaming",
+        "indie",
+        "game"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "indie game",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "travel-beach-66",
+      "title": "Travel Beach",
+      "description": "Remote starter video for the TRAVEL category: travel beach.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "beach"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "travel beach",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "mountain-travel-67",
+      "title": "Mountain Travel",
+      "description": "Remote starter video for the TRAVEL category: mountain travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "mountain"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "mountain travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "city-travel-68",
+      "title": "City Travel",
+      "description": "Remote starter video for the TRAVEL category: city travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "city"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "city travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "railway-journey-69",
+      "title": "Railway Journey",
+      "description": "Remote starter video for the TRAVEL category: railway journey.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "railway",
+        "journey"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "railway journey",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "road-trip-70",
+      "title": "Road Trip",
+      "description": "Remote starter video for the TRAVEL category: road trip.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "road",
+        "trip"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "road trip",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "desert-travel-71",
+      "title": "Desert Travel",
+      "description": "Remote starter video for the TRAVEL category: desert travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "desert"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "desert travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "island-travel-72",
+      "title": "Island Travel",
+      "description": "Remote starter video for the TRAVEL category: island travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "island"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "island travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "forest-travel-73",
+      "title": "Forest Travel",
+      "description": "Remote starter video for the TRAVEL category: forest travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "forest"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "forest travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "waterfall-travel-74",
+      "title": "Waterfall Travel",
+      "description": "Remote starter video for the TRAVEL category: waterfall travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "waterfall"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "waterfall travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "historic-town-travel-75",
+      "title": "Historic Town Travel",
+      "description": "Remote starter video for the TRAVEL category: historic town travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "historic",
+        "town"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "historic town travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "museum-travel-76",
+      "title": "Museum Travel",
+      "description": "Remote starter video for the TRAVEL category: museum travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "museum"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "museum travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "wildlife-travel-77",
+      "title": "Wildlife Travel",
+      "description": "Remote starter video for the TRAVEL category: wildlife travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "wildlife"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "wildlife travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "coastal-travel-78",
+      "title": "Coastal Travel",
+      "description": "Remote starter video for the TRAVEL category: coastal travel.",
+      "category": "TRAVEL",
+      "tags": [
+        "travel",
+        "coastal"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "coastal travel",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "live-concert-79",
+      "title": "Live Concert",
+      "description": "Remote starter video for the MUSIC category: live concert.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "live",
+        "concert"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "live concert",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "orchestra-performance-80",
+      "title": "Orchestra Performance",
+      "description": "Remote starter video for the MUSIC category: orchestra performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "orchestra",
+        "performance"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "orchestra performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "jazz-performance-81",
+      "title": "Jazz Performance",
+      "description": "Remote starter video for the MUSIC category: jazz performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "jazz",
+        "performance"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "jazz performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "piano-performance-82",
+      "title": "Piano Performance",
+      "description": "Remote starter video for the MUSIC category: piano performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "piano",
+        "performance"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "piano performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "guitar-performance-83",
+      "title": "Guitar Performance",
+      "description": "Remote starter video for the MUSIC category: guitar performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "guitar",
+        "performance"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "guitar performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "drum-performance-84",
+      "title": "Drum Performance",
+      "description": "Remote starter video for the MUSIC category: drum performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "drum",
+        "performance"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "drum performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "choir-performance-85",
+      "title": "Choir Performance",
+      "description": "Remote starter video for the MUSIC category: choir performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "choir",
+        "performance"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "choir performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "street-musician-86",
+      "title": "Street Musician",
+      "description": "Remote starter video for the MUSIC category: street musician.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "street",
+        "musician"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "street musician",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "classical-music-performance-87",
+      "title": "Classical Music Performance",
+      "description": "Remote starter video for the MUSIC category: classical music performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "classical",
+        "performance"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "classical music performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "folk-music-performance-88",
+      "title": "Folk Music Performance",
+      "description": "Remote starter video for the MUSIC category: folk music performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "folk",
+        "performance"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "folk music performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "band-rehearsal-89",
+      "title": "Band Rehearsal",
+      "description": "Remote starter video for the MUSIC category: band rehearsal.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "band",
+        "rehearsal"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "band rehearsal",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "music-festival-90",
+      "title": "Music Festival",
+      "description": "Remote starter video for the MUSIC category: music festival.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "festival"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "music festival",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "dance-performance-91",
+      "title": "Dance Performance",
+      "description": "Remote starter video for the MUSIC category: dance performance.",
+      "category": "MUSIC",
+      "tags": [
+        "music",
+        "dance",
+        "performance"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "dance performance",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "classroom-lesson-92",
+      "title": "Classroom Lesson",
+      "description": "Remote starter video for the EDUCATION category: classroom lesson.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "classroom",
+        "lesson"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "classroom lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "school-science-experiment-93",
+      "title": "School Science Experiment",
+      "description": "Remote starter video for the EDUCATION category: school science experiment.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "school",
+        "science",
+        "experiment"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "school science experiment",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "museum-education-94",
+      "title": "Museum Education",
+      "description": "Remote starter video for the EDUCATION category: museum education.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "museum"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "museum education",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "library-study-95",
+      "title": "Library Study",
+      "description": "Remote starter video for the EDUCATION category: library study.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "library",
+        "study"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "library study",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "university-lecture-96",
+      "title": "University Lecture",
+      "description": "Remote starter video for the EDUCATION category: university lecture.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "university",
+        "lecture"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "university lecture",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "educational-demonstration-97",
+      "title": "Educational Demonstration",
+      "description": "Remote starter video for the EDUCATION category: educational demonstration.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "educational",
+        "demonstration"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "educational demonstration",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "teacher-lesson-98",
+      "title": "Teacher Lesson",
+      "description": "Remote starter video for the EDUCATION category: teacher lesson.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "teacher",
+        "lesson"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "teacher lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "student-project-99",
+      "title": "Student Project",
+      "description": "Remote starter video for the EDUCATION category: student project.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "student",
+        "project"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "student project",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "laboratory-lesson-100",
+      "title": "Laboratory Lesson",
+      "description": "Remote starter video for the EDUCATION category: laboratory lesson.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "laboratory",
+        "lesson"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "laboratory lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "astronomy-lesson-101",
+      "title": "Astronomy Lesson",
+      "description": "Remote starter video for the EDUCATION category: astronomy lesson.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "astronomy",
+        "lesson"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "astronomy lesson",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "nature-education-102",
+      "title": "Nature Education",
+      "description": "Remote starter video for the EDUCATION category: nature education.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "nature"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "nature education",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "technology-education-103",
+      "title": "Technology Education",
+      "description": "Remote starter video for the EDUCATION category: technology education.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "technology"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "technology education",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "art-education-104",
+      "title": "Art Education",
+      "description": "Remote starter video for the EDUCATION category: art education.",
+      "category": "EDUCATION",
+      "tags": [
+        "education",
+        "art"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "art education",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "painting-demonstration-105",
+      "title": "Painting Demonstration",
+      "description": "Remote starter video for the ART category: painting demonstration.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "painting",
+        "demonstration"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "painting demonstration",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "drawing-demonstration-106",
+      "title": "Drawing Demonstration",
+      "description": "Remote starter video for the ART category: drawing demonstration.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "drawing",
+        "demonstration"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "drawing demonstration",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "sculpture-107",
+      "title": "Sculpture",
+      "description": "Remote starter video for the ART category: sculpture.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "sculpture"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "sculpture",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "street-art-108",
+      "title": "Street Art",
+      "description": "Remote starter video for the ART category: street art.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "street"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "street art",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "graffiti-art-109",
+      "title": "Graffiti Art",
+      "description": "Remote starter video for the ART category: graffiti art.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "graffiti"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "graffiti art",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "pottery-making-110",
+      "title": "Pottery Making",
+      "description": "Remote starter video for the ART category: pottery making.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "pottery",
+        "making"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "pottery making",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "printmaking-111",
+      "title": "Printmaking",
+      "description": "Remote starter video for the ART category: printmaking.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "printmaking"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "printmaking",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "digital-art-112",
+      "title": "Digital Art",
+      "description": "Remote starter video for the ART category: digital art.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "digital"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "digital art",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "photography-art-113",
+      "title": "Photography Art",
+      "description": "Remote starter video for the ART category: photography art.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "photography"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "photography art",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "textile-art-114",
+      "title": "Textile Art",
+      "description": "Remote starter video for the ART category: textile art.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "textile"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "textile art",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "wood-carving-115",
+      "title": "Wood Carving",
+      "description": "Remote starter video for the ART category: wood carving.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "wood",
+        "carving"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "wood carving",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "glass-art-116",
+      "title": "Glass Art",
+      "description": "Remote starter video for the ART category: glass art.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "glass"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "glass art",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "gallery-exhibition-117",
+      "title": "Gallery Exhibition",
+      "description": "Remote starter video for the ART category: gallery exhibition.",
+      "category": "ART",
+      "tags": [
+        "art",
+        "gallery",
+        "exhibition"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "gallery exhibition",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "cooking-tutorial-118",
+      "title": "Cooking Tutorial",
+      "description": "Remote starter video for the LIFESTYLE category: cooking tutorial.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "cooking",
+        "tutorial"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "cooking tutorial",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "baking-tutorial-119",
+      "title": "Baking Tutorial",
+      "description": "Remote starter video for the LIFESTYLE category: baking tutorial.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "baking",
+        "tutorial"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "baking tutorial",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "gardening-120",
+      "title": "Gardening",
+      "description": "Remote starter video for the LIFESTYLE category: gardening.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "gardening"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "gardening",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "home-organization-121",
+      "title": "Home Organization",
+      "description": "Remote starter video for the LIFESTYLE category: home organization.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "home",
+        "organization"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "home organization",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "morning-routine-122",
+      "title": "Morning Routine",
+      "description": "Remote starter video for the LIFESTYLE category: morning routine.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "morning",
+        "routine"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "morning routine",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "fitness-exercise-123",
+      "title": "Fitness Exercise",
+      "description": "Remote starter video for the LIFESTYLE category: fitness exercise.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "fitness",
+        "exercise"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "fitness exercise",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "crafting-124",
+      "title": "Crafting",
+      "description": "Remote starter video for the LIFESTYLE category: crafting.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "crafting"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "crafting",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "fashion-design-125",
+      "title": "Fashion Design",
+      "description": "Remote starter video for the LIFESTYLE category: fashion design.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "fashion",
+        "design"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "fashion design",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "healthy-meal-preparation-126",
+      "title": "Healthy Meal Preparation",
+      "description": "Remote starter video for the LIFESTYLE category: healthy meal preparation.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "healthy",
+        "meal",
+        "preparation"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "healthy meal preparation",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "pet-care-127",
+      "title": "Pet Care",
+      "description": "Remote starter video for the LIFESTYLE category: pet care.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "pet",
+        "care"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "pet care",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "interior-design-128",
+      "title": "Interior Design",
+      "description": "Remote starter video for the LIFESTYLE category: interior design.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "interior",
+        "design"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "interior design",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "diy-project-129",
+      "title": "Diy Project",
+      "description": "Remote starter video for the LIFESTYLE category: DIY project.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "diy",
+        "project"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "DIY project",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "outdoor-hobby-130",
+      "title": "Outdoor Hobby",
+      "description": "Remote starter video for the LIFESTYLE category: outdoor hobby.",
+      "category": "LIFESTYLE",
+      "tags": [
+        "lifestyle",
+        "outdoor",
+        "hobby"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "outdoor hobby",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "space-science-131",
+      "title": "Space Science",
+      "description": "Remote starter video for the SCIENCE category: space science.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "space"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "space science",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "astronomy-132",
+      "title": "Astronomy",
+      "description": "Remote starter video for the SCIENCE category: astronomy.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "astronomy"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "astronomy",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "robotics-133",
+      "title": "Robotics",
+      "description": "Remote starter video for the SCIENCE category: robotics.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "robotics"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "robotics",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "microscope-science-134",
+      "title": "Microscope Science",
+      "description": "Remote starter video for the SCIENCE category: microscope science.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "microscope"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "microscope science",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "physics-experiment-135",
+      "title": "Physics Experiment",
+      "description": "Remote starter video for the SCIENCE category: physics experiment.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "physics",
+        "experiment"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "physics experiment",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "chemistry-experiment-136",
+      "title": "Chemistry Experiment",
+      "description": "Remote starter video for the SCIENCE category: chemistry experiment.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "chemistry",
+        "experiment"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "chemistry experiment",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "biology-experiment-137",
+      "title": "Biology Experiment",
+      "description": "Remote starter video for the SCIENCE category: biology experiment.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "biology",
+        "experiment"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "biology experiment",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "animal-behavior-science-138",
+      "title": "Animal Behavior Science",
+      "description": "Remote starter video for the SCIENCE category: animal behavior science.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "animal",
+        "behavior"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "animal behavior science",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "weather-science-139",
+      "title": "Weather Science",
+      "description": "Remote starter video for the SCIENCE category: weather science.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "weather"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "weather science",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "ocean-science-140",
+      "title": "Ocean Science",
+      "description": "Remote starter video for the SCIENCE category: ocean science.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "ocean"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "ocean science",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "earth-science-141",
+      "title": "Earth Science",
+      "description": "Remote starter video for the SCIENCE category: earth science.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "earth"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "earth science",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "engineering-demonstration-142",
+      "title": "Engineering Demonstration",
+      "description": "Remote starter video for the SCIENCE category: engineering demonstration.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "engineering",
+        "demonstration"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "engineering demonstration",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "renewable-energy-143",
+      "title": "Renewable Energy",
+      "description": "Remote starter video for the SCIENCE category: renewable energy.",
+      "category": "SCIENCE",
+      "tags": [
+        "science",
+        "renewable",
+        "energy"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "renewable energy",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "short-documentary-144",
+      "title": "Short Documentary",
+      "description": "Remote starter video for the FILM category: short documentary.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "short",
+        "documentary"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "short documentary",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "public-domain-film-145",
+      "title": "Public Domain Film",
+      "description": "Remote starter video for the FILM category: public domain film.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "public",
+        "domain"
+      ],
+      "creatorIndex": 0,
+      "searchTopic": "public domain film",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "film-history-146",
+      "title": "Film History",
+      "description": "Remote starter video for the FILM category: film history.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "history"
+      ],
+      "creatorIndex": 1,
+      "searchTopic": "film history",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "cinema-archive-147",
+      "title": "Cinema Archive",
+      "description": "Remote starter video for the FILM category: cinema archive.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "cinema",
+        "archive"
+      ],
+      "creatorIndex": 2,
+      "searchTopic": "cinema archive",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "silent-film-148",
+      "title": "Silent Film",
+      "description": "Remote starter video for the FILM category: silent film.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "silent"
+      ],
+      "creatorIndex": 3,
+      "searchTopic": "silent film",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "nature-documentary-149",
+      "title": "Nature Documentary",
+      "description": "Remote starter video for the FILM category: nature documentary.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "nature",
+        "documentary"
+      ],
+      "creatorIndex": 4,
+      "searchTopic": "nature documentary",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "travel-documentary-150",
+      "title": "Travel Documentary",
+      "description": "Remote starter video for the FILM category: travel documentary.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "travel",
+        "documentary"
+      ],
+      "creatorIndex": 5,
+      "searchTopic": "travel documentary",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "science-documentary-151",
+      "title": "Science Documentary",
+      "description": "Remote starter video for the FILM category: science documentary.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "science",
+        "documentary"
+      ],
+      "creatorIndex": 6,
+      "searchTopic": "science documentary",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "art-documentary-152",
+      "title": "Art Documentary",
+      "description": "Remote starter video for the FILM category: art documentary.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "art",
+        "documentary"
+      ],
+      "creatorIndex": 7,
+      "searchTopic": "art documentary",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "community-documentary-153",
+      "title": "Community Documentary",
+      "description": "Remote starter video for the FILM category: community documentary.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "community",
+        "documentary"
+      ],
+      "creatorIndex": 8,
+      "searchTopic": "community documentary",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "educational-film-154",
+      "title": "Educational Film",
+      "description": "Remote starter video for the FILM category: educational film.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "educational"
+      ],
+      "creatorIndex": 9,
+      "searchTopic": "educational film",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "experimental-film-155",
+      "title": "Experimental Film",
+      "description": "Remote starter video for the FILM category: experimental film.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "experimental"
+      ],
+      "creatorIndex": 10,
+      "searchTopic": "experimental film",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    },
+    {
+      "slug": "animation-documentary-156",
+      "title": "Animation Documentary",
+      "description": "Remote starter video for the FILM category: animation documentary.",
+      "category": "FILM",
+      "tags": [
+        "film",
+        "animation",
+        "documentary"
+      ],
+      "creatorIndex": 11,
+      "searchTopic": "animation documentary",
+      "audio": true,
+      "sourceProvider": "Wikimedia Commons",
+      "licenseFilter": [
+        "CC0",
+        "Public domain",
+        "CC BY",
+        "CC BY-SA"
+      ]
+    }
+  ],
+  "remote_video_library": [],
+  "mediaNote": "156 unique starter slots. On startup the server queries Wikimedia Commons for distinct video files matching each topic, filters for allowed open/public licenses, deduplicates URLs, and stores attribution metadata. No starter MP4 files are bundled in this project."
+}
