@@ -35,3 +35,7 @@ The web service remains configured for Render's Free plan. Runtime catalog files
 
 ## V20.1 deployment fix
 The server now starts listening immediately; remote media catalog hydration runs in the background with an 8-second API timeout. This prevents Render health checks from being blocked by remote media lookups.
+
+
+## V20.2 deployment fix
+The previous V20.1 package referenced `server/shorts_catalog.json` while the catalog was stored at repository root. V20.2 uses the server copy when present and safely falls back to the root catalog. This fixes the Render `ENOENT ... server/shorts_catalog.json` startup failure.

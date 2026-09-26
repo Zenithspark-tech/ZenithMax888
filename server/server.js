@@ -17,7 +17,10 @@ const GAME_DIR = path.join(DATA_DIR, 'games');
 const DB = path.join(DATA_DIR, 'db.json');
 const SECRET = process.env.JWT_SECRET || 'CHANGE_THIS_IN_PRODUCTION';
 const CATALOG = JSON.parse(fs.readFileSync(path.join(__dirname, 'starter_catalog.json'), 'utf8'));
-const SHORTS = JSON.parse(fs.readFileSync(path.join(__dirname, 'shorts_catalog.json'), 'utf8'));
+const SHORTS_FILE = fs.existsSync(path.join(__dirname, 'shorts_catalog.json'))
+  ? path.join(__dirname, 'shorts_catalog.json')
+  : path.join(ROOT, 'shorts_catalog.json');
+const SHORTS = JSON.parse(fs.readFileSync(SHORTS_FILE, 'utf8'));
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 fs.mkdirSync(GAME_DIR, { recursive: true });
 
