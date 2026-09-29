@@ -1,27 +1,14 @@
-# ZenithMax V23
+# ZenithMax V25.0
 
-ZenithMax V23 is the production-hardening release following V24. It retains the expanded social/video/creator/communication experience and strengthens sessions, storage safety, service monitoring, and admin operations.
+ZenithMax V25 is the release-candidate build following V24 production services. It combines social publishing, Stories, Shorts, long-form video, music, games, creator tools, rankings, messaging/calls, responsive layouts, production-service adapters, and launch-readiness tooling.
 
-## V23 highlights
-- Persistent login with refresh-token support and server-side session revocation.
-- Atomic JSON database saves.
-- API rate limiting and security response headers.
-- `/api/health`, `/api/ready`, and `/api/meta` operational endpoints.
-- Account security view and server logout.
-- Audit logging for important account/admin actions.
-- CEO/admin-only rolling database backups.
-- Responsive interface and all previous V22.x features retained.
+## V25 additions
+- Production Release Center with provider preflight checks
+- Runtime request/error/latency metrics for administrators
+- Safe schema upgrade backup before migrations
+- Persistent access + refresh token storage and renewal
+- Installable PWA shell with offline static fallback
+- Release manifest and Render V25 configuration
 
-## Required production environment
-- `JWT_SECRET`: strong random secret (32+ characters recommended).
-- `REFRESH_SECRET`: a separate strong random secret is recommended.
-- `DATA_DIR`: writable application data directory.
-- `CEO_EMAILS`: comma-separated recognized executive account emails (the existing build defaults to the configured CEO account).
-- `DEFAULT_COUNTRY_CODE`: default calling/contact country code when users enter local-format numbers.
-
-## Remaining external services
-For production scale, connect managed object storage/CDN, managed database storage, email/identity delivery, TURN/realtime infrastructure, and a real payment provider. The application includes the integration points and UI workflows but does not claim those third-party services are connected automatically.
-
-
-## V24 Production Services
-See `PRODUCTION_SERVICES_V24.md` for PostgreSQL, S3-compatible storage/CDN, transactional email, Stripe readiness, TURN, and FFmpeg configuration.
+## Production truth
+Provider integrations are adapter-ready but are not considered live until real credentials and accounts are configured in Render.
