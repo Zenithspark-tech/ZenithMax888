@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: zenithmax-v23
+    name: zenithmax-v24
     runtime: node
     plan: free
     buildCommand: npm install
@@ -13,3 +13,47 @@ services:
         generateValue: true
       - key: CEO_EMAILS
         value: zenitholuwambe5@gmail.com
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_PROVIDER
+        value: postgres
+      - key: MEDIA_STORAGE_PROVIDER
+        value: s3
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_REGION
+        sync: false
+      - key: S3_ENDPOINT
+        sync: false
+      - key: S3_ACCESS_KEY_ID
+        sync: false
+      - key: S3_SECRET_ACCESS_KEY
+        sync: false
+      - key: S3_FORCE_PATH_STYLE
+        value: "false"
+      - key: MEDIA_CDN_BASE_URL
+        sync: false
+      - key: EMAIL_PROVIDER
+        value: resend
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM
+        sync: false
+      - key: APP_PUBLIC_URL
+        sync: false
+      - key: PAYMENTS_PROVIDER
+        value: stripe
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: TURN_URLS
+        sync: false
+      - key: TURN_USERNAME
+        sync: false
+      - key: TURN_CREDENTIAL
+        sync: false

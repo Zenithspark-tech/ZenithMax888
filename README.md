@@ -1,6 +1,6 @@
 # ZenithMax V23
 
-ZenithMax V23 is the production-hardening release following V22.7. It retains the expanded social/video/creator/communication experience and strengthens sessions, storage safety, service monitoring, and admin operations.
+ZenithMax V23 is the production-hardening release following V24. It retains the expanded social/video/creator/communication experience and strengthens sessions, storage safety, service monitoring, and admin operations.
 
 ## V23 highlights
 - Persistent login with refresh-token support and server-side session revocation.
@@ -21,3 +21,7 @@ ZenithMax V23 is the production-hardening release following V22.7. It retains th
 
 ## Remaining external services
 For production scale, connect managed object storage/CDN, managed database storage, email/identity delivery, TURN/realtime infrastructure, and a real payment provider. The application includes the integration points and UI workflows but does not claim those third-party services are connected automatically.
+
+
+## V24 Production Services
+See `PRODUCTION_SERVICES_V24.md` for PostgreSQL, S3-compatible storage/CDN, transactional email, Stripe readiness, TURN, and FFmpeg configuration.
