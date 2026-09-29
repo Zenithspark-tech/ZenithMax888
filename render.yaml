@@ -1,10 +1,15 @@
 services:
   - type: web
-    name: zenithmax-v164
+    name: zenithmax-v23
     runtime: node
     plan: free
     buildCommand: npm install
     startCommand: npm start
+    healthCheckPath: /api/ready
     envVars:
       - key: JWT_SECRET
         generateValue: true
+      - key: REFRESH_SECRET
+        generateValue: true
+      - key: CEO_EMAILS
+        value: zenitholuwambe5@gmail.com
