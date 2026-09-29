@@ -1,4 +1,4 @@
-# ZenithMax V20.4 — scalable 567K remote Shorts catalog
+# ZenithMax V22 — advanced social, media and communication platform
 
 V20.4 upgrades the Shorts system from a runtime cache into an **append-only, exactly de-duplicated catalog** designed to grow toward 567,000 unique remote videos without bundling the media files.
 
@@ -14,6 +14,17 @@ V20.4 upgrades the Shorts system from a runtime cache into an **append-only, exa
 - A GitHub Actions workflow (`.github/workflows/grow-shorts.yml`) can run weekly or manually to grow the catalog and commit the catalog shards/state.
 - Client-side infinite scrolling still loads only the current page of videos.
 - Remote videos remain streamed through the ZenithMax media proxy; no MP4/WebM files are stored in the ZIP.
+
+
+
+## V22 Advanced Social update
+- Full Social feed with text/photo posts, likes, comments, bookmarks and sharing.
+- 24-hour Stories with text/photo publishing, expiry and viewed state.
+- Unified search across videos, creators, social posts, music and games.
+- Saved area now includes both saved videos and saved social posts.
+- Settings & Privacy center for profile editing, phone discovery and in-app notification preferences.
+- Home now surfaces Stories and social updates alongside the existing personalized video feed.
+- Notification badges expose unread activity from messages, follows, likes and comments.
 
 ## Important about 567,000
 
