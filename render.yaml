@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: zenithmax-v25
+    name: zenithmax-v26
     runtime: node
     plan: free
     buildCommand: npm install
@@ -60,3 +60,6 @@ services:
 
       - key: RELEASE_CHANNEL
         value: stable
+      # Optional: enable dynamic YouTube discovery without rehosting YouTube media.
+      - key: YOUTUBE_API_KEY
+        sync: false
