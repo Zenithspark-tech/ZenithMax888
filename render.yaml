@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: zenithmax-v27
+    name: zenithmax-v26
     runtime: node
     plan: free
     buildCommand: npm install
